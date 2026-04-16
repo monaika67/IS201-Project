@@ -1,0 +1,64 @@
+/* Requirement: Font Family & Color */
+body {
+     
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+    background-color: white; /* Requirement: Custom Background */
+    margin: 40px;
+    h2 {
+    text-align: center;
+    width: 100%;
+}
+
+/* This ensures your list stays aligned to the left side of the box */
+ol {
+    text-align: left;
+    display: inline-block; /* Helps the list stay grouped */
+    vertical-align: top;
+}
+}
+
+/* Requirement: 3 Div styles for positioning/blocks */
+#header-section {
+    text-align: center;
+    border-bottom: 2px solid #fb7cff;
+    margin-bottom: 20px;
+}
+
+#main-content {
+    background-color: rgb(238, 169, 215);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;  /* Optional: keeps your joke list aligned left inside the centered box */
+    .image-section, .video-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+h3 {
+    text-align: center;
+    margin-top: 30px; /* Adds some nice breathing room above the video */
+}
+iframe {
+    display: block;
+    margin: 20px auto; /* Centers the YouTube player */
+}
+}
+
+#tableau-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This pulls the Tableau container into the middle */
+    padding: 50px 20px;
+    
+    margin-top: 30px;
+    
+
+}
+
+h1 {
+    color: #f958ff; /* Requirement: Font Color */
+}
