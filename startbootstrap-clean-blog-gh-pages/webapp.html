@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mona's Ultimate Joke-O-Meter</title>
+    <style>
+        /* CSS: Styling our App */
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            width: 80%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        button {
+            background-color: #ff9f43;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        button:hover { background-color: #f39c12; transform: scale(1.1); }
+        #joke-text { font-size: 1.5rem; margin: 20px 0; min-height: 80px; }
+        .mood-box { margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; }
+        #mood-status { font-weight: bold; color: #55efc4; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>😂 Joke-O-Meter</h1>
+        <p>Can you handle these BYU-approved zingers?</p>
+        
+        <div id="joke-text">Click the button for a masterpiece...</div>
+        
+        <button onclick="getNewJoke()">Next Joke</button>
+        <button onclick="showPunchline()">Show Punchline</button>
+
+        <div class="mood-box">
+            <p>Current Vibe: <span id="mood-status">Bored</span></p>
+            <button onclick="changeMood('🙂 Meh')">Meh</button>
+            <button onclick="changeMood('😂 LOL')">LOL</button>
+            <button onclick="changeMood('💀 I am Dead')">ROFL</button>
+        </div>
+
+        <br>
+        <a href="fromScratch.html" style="color: #dfe6e9; text-decoration: none; font-size: 0.8rem;">← Back to Scratch Page</a>
+    </div>
+
+    <script>
+        /* JavaScript: The Logic */
+        const jokes = [
+            { setup: "Why did the student cross the BYU campus?", punchline: "To get to the other 'Test'ing Center!" },
+            { setup: "How does a computer get drunk?", punchline: "It takes screenshots!" },
+            { setup: "Why do programmers always mix up Halloween and Christmas?", punchline: "Because Oct 31 == Dec 25." },
+            { setup: "Why was the belt arrested?", punchline: "For holding up a pair of pants!" }
+        ];
+
+        let currentJoke = {};
+
+        function getNewJoke() {
+            const index = Math.floor(Math.random() * jokes.length);
+            currentJoke = jokes[index];
+            document.getElementById('joke-text').innerText = currentJoke.setup;
+        }
+
+        function showPunchline() {
+            if (currentJoke.punchline) {
+                document.getElementById('joke-text').innerText = currentJoke.punchline;
+            }
+        }
+
+        function changeMood(mood) {
+            document.getElementById('mood-status').innerText = mood;
+        }
+    </script>
+</body>
+</html>
